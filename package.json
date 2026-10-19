@@ -1,0 +1,11 @@
+{
+  "name": "shift-ledger-browser-checks",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "test:browser": "playwright test"
+  },
+  "devDependencies": {
+    "@playwright/test": "^1.58.0"
+  }
+}

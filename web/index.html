@@ -1,0 +1,132 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Shift Ledger · Incident handoffs</title>
+    <link rel="stylesheet" href="/style.css" />
+    <script src="/app.js" defer></script>
+  </head>
+  <body>
+    <header>
+      <a class="brand" href="/">◈ <strong>Shift Ledger</strong></a
+      ><span class="tag">OPERATIONS / HANDOFFS</span><span id="identity"></span
+      ><button id="logout" hidden>Sign out</button>
+    </header>
+    <main>
+      <section id="login" class="login">
+        <p class="eyebrow">CLEAR CONTEXT. ACCOUNTABLE OWNERSHIP.</p>
+        <h1>The next shift<br />starts informed.</h1>
+        <p>
+          Track the investigation. Record the evidence.<br />Transfer
+          responsibility only when it is accepted.
+        </p>
+        <form id="login-form">
+          <label for="token">Your local access token</label
+          ><input
+            id="token"
+            type="password"
+            required
+            autocomplete="off"
+          /><button class="primary">Open workspace →</button>
+        </form>
+        <p class="muted">
+          Use a token from your local configuration. This workspace has no
+          public sign-up.
+        </p>
+      </section>
+      <div id="workspace" hidden>
+        <section class="intro">
+          <div>
+            <p class="eyebrow">THE OPERATIONS DESK</p>
+            <h1>Keep the context moving.</h1>
+            <p class="muted">
+              Every incident has an owner. Every handoff has an acknowledgement.
+            </p>
+          </div>
+          <button id="new" class="primary">＋ Open incident</button>
+        </section>
+        <div class="stats">
+          <article>
+            <span>Active on this page</span><strong id="active-count">0</strong>
+          </article>
+          <article>
+            <span>Awaiting my acceptance</span
+            ><strong id="pending-count">0</strong>
+          </article>
+          <article>
+            <span>Owned by me</span><strong id="owned-count">0</strong>
+          </article>
+        </div>
+        <div class="desk">
+          <section class="queue">
+            <div class="section-heading">
+              <h2>Incident queue</h2>
+              <button id="refresh">↻ Refresh</button>
+            </div>
+            <label for="filter" class="sr-only">Filter incidents</label
+            ><select id="filter">
+              <option value="all">All incidents</option>
+              <option value="active">Active incidents</option>
+              <option value="mine">Owned by me</option>
+              <option value="incoming">Incoming handoffs</option>
+            </select>
+            <div id="incidents"></div>
+            <button id="more" hidden>Load older incidents</button>
+          </section>
+          <section id="detail" class="detail" aria-live="polite">
+            <div class="empty">
+              <span>◎</span>
+              <h2>Context lives here</h2>
+              <p>Select an incident to review its timeline and next action.</p>
+            </div>
+          </section>
+        </div>
+      </div>
+      <p id="message" role="status" aria-live="polite"></p>
+    </main>
+    <dialog id="create-dialog">
+      <form id="create-form">
+        <div class="section-heading">
+          <h2>Open an incident</h2>
+          <button type="button" id="close-dialog" aria-label="Close">×</button>
+        </div>
+        <label
+          >Title<input
+            name="title"
+            required
+            minlength="3"
+            maxlength="160"
+            placeholder="Elevated latency on checkout"
+        /></label>
+        <div class="form-grid">
+          <label
+            >Service<input
+              name="service"
+              required
+              maxlength="64"
+              placeholder="checkout-api" /></label
+          ><label
+            >Severity<select name="severity">
+              <option>SEV2</option>
+              <option>SEV1</option>
+              <option>SEV3</option>
+            </select></label
+          >
+        </div>
+        <label
+          >Initial evidence<textarea
+            name="note"
+            required
+            minlength="3"
+            maxlength="2000"
+            placeholder="What changed? What is the user impact?"
+          ></textarea></label
+        ><button class="primary">Create incident</button>
+      </form>
+    </dialog>
+    <footer>
+      SHIFT LEDGER <span>Explicit ownership. An auditable timeline.</span>
+    </footer>
+  </body>
+</html>
