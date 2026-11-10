@@ -1,14 +1,20 @@
-# Shift Ledger
+<a id="shift-ledger"></a>
+
+<p>
+  <img src="docs/assets/project-header.svg" alt="Shift Ledger — Clear ownership. Reliable handoffs." width="100%">
+</p>
 
 [![Checks](https://github.com/nazek52/shift-ledger/actions/workflows/ci.yml/badge.svg)](https://github.com/nazek52/shift-ledger/actions/workflows/ci.yml)
 
-An incident desk where ownership changes only after the next responder accepts the handoff. Every update has context, an actor, and a versioned audit event.
+An incident desk where ownership changes only after the next responder accepts the handoff. Role checks, optimistic concurrency, and atomic audit events keep each update tied to an actor, a version, and its context.
 
-**FastAPI · SQLite transactions · browser UI · optimistic concurrency · RBAC**
+**Python · FastAPI · SQLite · RBAC · browser UI**
+
+[Run locally](#run-locally) · [Architecture](docs/architecture.md) · [Runbook](docs/runbook.md) · [Verification](docs/verification.md) · [Русский разбор](docs/INTERVIEW.ru.md)
 
 ![Shift Ledger interface](docs/preview.png)
 
-[Русский разбор](docs/INTERVIEW.ru.md) · [Architecture](docs/architecture.md) · [Runbook](docs/runbook.md) · [Verification](docs/verification.md)
+---
 
 ## Run locally
 
